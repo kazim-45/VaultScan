@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vaultscan"
+version = "1.0.0"
+description = "Scan your entire git history for accidentally committed secrets"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "kazim-45"}
+]
+dependencies = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+vaultscan = "vaultscan_pkg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vaultscan_pkg*"]
